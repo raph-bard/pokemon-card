@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+$gold-color : #9d8938;
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #202124;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nrj {
+  display: block;
+  float: right;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background: url("assets/nrj-normal.jpg");
+
+  &.nrj-feu {
+    background: url("assets/nrj-feu.jpg");
+  }
+  &.nrj-eau {
+    background: url("assets/nrj-eau.jpg");
+  }
+  &.nrj-feuille {
+    background: url("assets/nrj-feuille.png");
+  }
+}
+
+.pokemon-card {
+    background: rgb(192,97,91);
+    background: linear-gradient(90deg, rgba(192,97,91,1) 0%, rgba(210,216,241,1) 11%, rgba(192,97,91,1) 23%, rgba(210,216,241,1) 39%, rgba(192,97,91,1) 56%, rgba(210,216,241,1) 80%, rgba(192,97,91,1) 100%);;
+
+  h1 {
+    font-size: 21px;
+    font-weight: 700;
+
+    &.base-pokemon {
+      &:before {
+        content: "Pokémon de base";
+        font-size: 10px;
+        display: block;
+        line-height: 0px;
+        margin-top: 8px;
+      }
+    }
+
+    .nrj {
+      margin-top: 4px;
+      margin-left: 4px;
+    }
+
+    span {
+      float: right;
+      color: #B2444B;
+    }
+  }
+
+  figure {
+    img {
+      width: 100%;
+      border: solid 6px $gold-color;
+    }
+    figcaption {
+      font-size: 12px;
+      width: calc(100% - 20px);
+      margin: 0 auto;
+      background: rgb(157,137,56);
+      background: linear-gradient(90deg, $gold-color 0%, rgba(228,224,184,1) 47%, rgba(157,137,56,1) 100%);
+      text-align: center;
+      font-style: italic;
+      font-weight: bold;
+    }
+  }
+
+  .attack-block {
+    margin-top: 5px;
+
+    .attack {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 50px;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid black;
+
+      h2 {
+        line-height: 14px;
+        font-size: 17px;
+        padding: 0 10px;
+
+        p {
+          display: inline;
+          font-size: 11px;
+
+          .nrj {
+            display: inline-block;
+            float: none;
+            width: 15px;
+            height: 15px;
+            vertical-align: bottom;
+          }
+        }
+      }
+
+      span {
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+    .attack-only {
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .nrj-block {
+      float: left;
+      width: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        margin: 0 2px;
+      }
+    }
+  }
+  span {
+    float: right;
+  }
+
+  .stats-block {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+
+    h3 {
+      font-size: 11px;
+      font-weight: bold;
+      text-align: center;
+
+      i {
+        margin: 0 auto;
+        float: none;
+      }
+    }
+  }
+
+  .infos-block {
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid $gold-color;
+    text-align: center;
+    padding: 1px 0;
+    width: calc(100% - 12px);
+    margin: 5px auto 0;
+    font-style: italic;
+  }
+}
