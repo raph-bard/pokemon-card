@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-$gold-color : #9d8938;
-
+$gold-color: #9d8938;
 
 * {
   margin: 0;
@@ -10,11 +9,16 @@ $gold-color : #9d8938;
 }
 
 body {
-    min-height: 100vh;
-    background-color: #202124;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  min-height: 100vh;
+  background-color: #202124;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex {
+  display: flex;
+  gap: 40px;
 }
 
 .nrj {
@@ -40,21 +44,27 @@ body {
 }
 
 .pokemon-card {
-    background: rgb(192,97,91);
-    background: linear-gradient(90deg, rgba(192,97,91,1) 0%, rgba(210,216,241,1) 11%, rgba(192,97,91,1) 23%, rgba(210,216,241,1) 39%, rgba(192,97,91,1) 56%, rgba(210,216,241,1) 80%, rgba(192,97,91,1) 100%);;
+  background: rgb(192, 97, 91);
+  background: linear-gradient(
+    90deg,
+    rgba(192, 97, 91, 1) 0%,
+    rgba(210, 216, 241, 1) 11%,
+    rgba(192, 97, 91, 1) 23%,
+    rgba(210, 216, 241, 1) 39%,
+    rgba(192, 97, 91, 1) 56%,
+    rgba(210, 216, 241, 1) 80%,
+    rgba(192, 97, 91, 1) 100%
+  );
 
   h1 {
     font-size: 21px;
     font-weight: 700;
 
-    &.base-pokemon {
-      &:before {
-        content: "Pokémon de base";
-        font-size: 10px;
-        display: block;
-        line-height: 0px;
-        margin-top: 8px;
-      }
+    b {
+      font-size: 10px;
+      display: block;
+      line-height: 0px;
+      margin-top: 8px;
     }
 
     .nrj {
@@ -64,7 +74,7 @@ body {
 
     span {
       float: right;
-      color: #B2444B;
+      color: #b2444b;
     }
   }
 
@@ -77,8 +87,13 @@ body {
       font-size: 12px;
       width: calc(100% - 20px);
       margin: 0 auto;
-      background: rgb(157,137,56);
-      background: linear-gradient(90deg, $gold-color 0%, rgba(228,224,184,1) 47%, rgba(157,137,56,1) 100%);
+      background: rgb(157, 137, 56);
+      background: linear-gradient(
+        90deg,
+        $gold-color 0%,
+        rgba(228, 224, 184, 1) 47%,
+        rgba(157, 137, 56, 1) 100%
+      );
       text-align: center;
       font-style: italic;
       font-weight: bold;
