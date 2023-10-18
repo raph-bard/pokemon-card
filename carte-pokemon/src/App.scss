@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 $gold-color: #9d8938;
+$yellow: #E9CC48;
 
 * {
   margin: 0;
@@ -45,6 +46,7 @@ body {
 
 .pokemon-card {
   background: rgb(192, 97, 91);
+  border: 17px solid $yellow;
   background: linear-gradient(
     90deg,
     rgba(192, 97, 91, 1) 0%,
@@ -87,7 +89,7 @@ body {
       font-size: 12px;
       width: calc(100% - 20px);
       margin: 0 auto;
-      background: rgb(157, 137, 56);
+      background: #9d8938;
       background: linear-gradient(
         90deg,
         $gold-color 0%,
@@ -184,5 +186,22 @@ body {
     width: calc(100% - 12px);
     margin: 5px auto 0;
     font-style: italic;
+  }
+}
+
+.switch-starter {
+  margin: 30px auto 0;
+  background-color: #202124;
+  border: 2px solid $yellow;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $yellow;
+  }
+  &:hover, & {
+    transition: all 0.3s;
   }
 }

@@ -4,7 +4,6 @@ const Container = styled.div`
   width: 358px;
   padding: 5px 15px;
   color: black;
-  border: 17px solid #E9CC48;
   border-radius: 14px;
 `;
 
@@ -18,7 +17,7 @@ const StyledComponents = (pokemon) => {
       </h1>
       <figure>
         <img className='pokemon-image' src={`src/assets/${pokemon.pkmId}.jpg`} alt={pokemon.pkmName}/>
-        <figcaption>Pokémon Lézard. Taille: 0.6 m, poids: 8.5 kg</figcaption>
+        <figcaption>{pokemon.figDescr}. Taille: {pokemon.figHeight} m, poids: {pokemon.figWeight} kg</figcaption>
       </figure>
       <div className='attack-block'>
         <div className='attack attack-1 attack-only'>

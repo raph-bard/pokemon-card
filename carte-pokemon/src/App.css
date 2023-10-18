@@ -42,6 +42,7 @@ body {
 
 .pokemon-card {
   background: rgb(192, 97, 91);
+  border: 17px solid #E9CC48;
   background: linear-gradient(90deg, rgb(192, 97, 91) 0%, rgb(210, 216, 241) 11%, rgb(192, 97, 91) 23%, rgb(210, 216, 241) 39%, rgb(192, 97, 91) 56%, rgb(210, 216, 241) 80%, rgb(192, 97, 91) 100%);
 }
 .pokemon-card h1 {
@@ -70,7 +71,7 @@ body {
   font-size: 12px;
   width: calc(100% - 20px);
   margin: 0 auto;
-  background: rgb(157, 137, 56);
+  background: #9d8938;
   background: linear-gradient(90deg, #9d8938 0%, rgb(228, 224, 184) 47%, rgb(157, 137, 56) 100%);
   text-align: center;
   font-style: italic;
@@ -147,4 +148,20 @@ body {
   width: calc(100% - 12px);
   margin: 5px auto 0;
   font-style: italic;
+}
+
+.switch-starter {
+  margin: 30px auto 0;
+  background-color: #202124;
+  border: 2px solid #E9CC48;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.switch-starter:hover {
+  background-color: #E9CC48;
+}
+.switch-starter:hover, .switch-starter {
+  transition: all 0.3s;
 }/*# sourceMappingURL=App.css.map */
