@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 $gold-color: #9d8938;
-$yellow: #E9CC48;
+$yellow: #e9cc48;
 
 * {
   margin: 0;
@@ -39,24 +39,50 @@ body {
   &.nrj-eau {
     background: url("assets/nrj-eau.jpg");
   }
-  &.nrj-feuille {
-    background: url("assets/nrj-feuille.png");
+  &.nrj-plante {
+    background: url("assets/nrj-plante.png");
   }
 }
 
 .pokemon-card {
-  background: rgb(192, 97, 91);
   border: 17px solid $yellow;
-  background: linear-gradient(
-    90deg,
-    rgba(192, 97, 91, 1) 0%,
-    rgba(210, 216, 241, 1) 11%,
-    rgba(192, 97, 91, 1) 23%,
-    rgba(210, 216, 241, 1) 39%,
-    rgba(192, 97, 91, 1) 56%,
-    rgba(210, 216, 241, 1) 80%,
-    rgba(192, 97, 91, 1) 100%
-  );
+
+  &.type-feu {
+    background: linear-gradient(
+      90deg,
+      #c0615b 0%,
+      #d2d8f1 11%,
+      #c0615b 23%,
+      #d2d8f1 39%,
+      #c0615b 56%,
+      #d2d8f1 80%,
+      #c0615b 100%
+    );
+  }
+  &.type-eau {
+    background: linear-gradient(
+      90deg,
+      #19A3C8 0%,
+      #d2d8f1 11%,
+      #19A3C8 23%,
+      #d2d8f1 39%,
+      #19A3C8 56%,
+      #d2d8f1 80%,
+      #19A3C8 100%
+    );
+  }
+  &.type-plante {
+    background: linear-gradient(
+      90deg,
+      #70b37b 0%,
+      #d2d8f1 11%,
+      #70b37b 23%,
+      #d2d8f1 39%,
+      #70b37b 56%,
+      #d2d8f1 80%,
+      #70b37b 100%
+    );
+  }
 
   h1 {
     font-size: 21px;
@@ -201,7 +227,8 @@ body {
   &:hover {
     background-color: $yellow;
   }
-  &:hover, & {
+  &:hover,
+  & {
     transition: all 0.3s;
   }
 }

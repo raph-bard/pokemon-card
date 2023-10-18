@@ -36,14 +36,21 @@ body {
 .nrj.nrj-eau {
   background: url("assets/nrj-eau.jpg");
 }
-.nrj.nrj-feuille {
-  background: url("assets/nrj-feuille.png");
+.nrj.nrj-plante {
+  background: url("assets/nrj-plante.png");
 }
 
 .pokemon-card {
-  background: rgb(192, 97, 91);
-  border: 17px solid #E9CC48;
-  background: linear-gradient(90deg, rgb(192, 97, 91) 0%, rgb(210, 216, 241) 11%, rgb(192, 97, 91) 23%, rgb(210, 216, 241) 39%, rgb(192, 97, 91) 56%, rgb(210, 216, 241) 80%, rgb(192, 97, 91) 100%);
+  border: 17px solid #e9cc48;
+}
+.pokemon-card.type-feu {
+  background: linear-gradient(90deg, #c0615b 0%, #d2d8f1 11%, #c0615b 23%, #d2d8f1 39%, #c0615b 56%, #d2d8f1 80%, #c0615b 100%);
+}
+.pokemon-card.type-eau {
+  background: linear-gradient(90deg, #19A3C8 0%, #d2d8f1 11%, #19A3C8 23%, #d2d8f1 39%, #19A3C8 56%, #d2d8f1 80%, #19A3C8 100%);
+}
+.pokemon-card.type-plante {
+  background: linear-gradient(90deg, #70b37b 0%, #d2d8f1 11%, #70b37b 23%, #d2d8f1 39%, #70b37b 56%, #d2d8f1 80%, #70b37b 100%);
 }
 .pokemon-card h1 {
   font-size: 21px;
@@ -153,14 +160,14 @@ body {
 .switch-starter {
   margin: 30px auto 0;
   background-color: #202124;
-  border: 2px solid #E9CC48;
+  border: 2px solid #e9cc48;
   padding: 10px;
   color: white;
   border-radius: 10px;
   cursor: pointer;
 }
 .switch-starter:hover {
-  background-color: #E9CC48;
+  background-color: #e9cc48;
 }
 .switch-starter:hover, .switch-starter {
   transition: all 0.3s;
