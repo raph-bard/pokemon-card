@@ -14,6 +14,18 @@ body {
   justify-content: center;
 }
 
+.blue-color {
+  color: #1a2597;
+}
+
+.red-color {
+  color: #d3201a;
+}
+
+.t-left {
+  text-align: left;
+}
+
 .d-flex {
   display: flex;
   gap: 40px;
@@ -42,12 +54,14 @@ body {
 
 .pokemon-card {
   border: 17px solid #e9cc48;
+  position: relative;
+  padding: 5px 15px 44px;
 }
 .pokemon-card.type-feu {
   background: linear-gradient(90deg, #c0615b 0%, #d2d8f1 11%, #c0615b 23%, #d2d8f1 39%, #c0615b 56%, #d2d8f1 80%, #c0615b 100%);
 }
 .pokemon-card.type-eau {
-  background: linear-gradient(90deg, #19A3C8 0%, #d2d8f1 11%, #19A3C8 23%, #d2d8f1 39%, #19A3C8 56%, #d2d8f1 80%, #19A3C8 100%);
+  background: linear-gradient(90deg, #19a3c8 0%, #d2d8f1 11%, #19a3c8 23%, #d2d8f1 39%, #19a3c8 56%, #d2d8f1 80%, #19a3c8 100%);
 }
 .pokemon-card.type-plante {
   background: linear-gradient(90deg, #70b37b 0%, #d2d8f1 11%, #70b37b 23%, #d2d8f1 39%, #70b37b 56%, #d2d8f1 80%, #70b37b 100%);
@@ -68,11 +82,16 @@ body {
 }
 .pokemon-card h1 span {
   float: right;
-  color: #b2444b;
+  color: #d3201a;
 }
-.pokemon-card figure img {
+.pokemon-card figure .pokemon-image {
   width: 100%;
   border: solid 6px #9d8938;
+  height: 210px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: 6px;
 }
 .pokemon-card figure figcaption {
   font-size: 12px;
@@ -103,21 +122,33 @@ body {
 }
 .pokemon-card .attack-block .attack h2 p {
   display: inline;
-  font-size: 11px;
+  font-size: 9px;
+  line-height: 9px;
 }
-.pokemon-card .attack-block .attack h2 p .nrj {
+.pokemon-card .attack-block .attack span {
+  font-size: 26px;
+  font-weight: bold;
+}
+.pokemon-card .attack-block .nrj {
   display: inline-block;
   float: none;
   width: 15px;
   height: 15px;
   vertical-align: bottom;
 }
-.pokemon-card .attack-block .attack span {
-  font-size: 26px;
-  font-weight: bold;
-}
 .pokemon-card .attack-block .attack-only h2 {
   text-align: center;
+}
+.pokemon-card .attack-block .attack-1 .talent {
+  font-size: 9px;
+  line-height: 12px;
+}
+.pokemon-card .attack-block .attack-1 .talent b {
+  font-size: 11px;
+}
+.pokemon-card .attack-block .attack-1 .talent .nrj {
+  width: 12px;
+  height: 12px;
 }
 .pokemon-card .attack-block .nrj-block {
   float: left;
@@ -155,6 +186,9 @@ body {
   width: calc(100% - 12px);
   margin: 5px auto 0;
   font-style: italic;
+  position: absolute;
+  bottom: 5px;
+  left: 6px;
 }
 
 .switch-starter {

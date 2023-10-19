@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 358px;
-  padding: 5px 15px;
   color: black;
   border-radius: 14px;
 `;
@@ -21,11 +20,10 @@ const StyledComponents = (pokemon) => {
         <span>{pokemon.pv} PV</span>
       </h1>
       <figure>
-        <img
+        <div
           className="pokemon-image"
-          src={`src/assets/${pokemon.id}.jpg`}
-          alt={pokemon.pkmName}
-        />
+          style={{ backgroundImage: `url('src/assets/${pokemon.id}.jpg')`}}
+        ></div>
         <figcaption>
           {pokemon.figDescr}. Taille: {pokemon.figHeight} m, poids:{" "}
           {pokemon.figWeight} kg
@@ -34,10 +32,14 @@ const StyledComponents = (pokemon) => {
       <div className="attack-block">
         <div className="attack attack-1 attack-only">
           <div className="nrj-block">
-            <i className="nrj nrj-normal"></i>
+            {pokemon.talent == true ? "" : <i className="nrj nrj-normal"></i>}
           </div>
-          <h2>Griffe</h2>
-          <span>10</span>
+          {pokemon.talent !== true ? (
+            <h2>{pokemon.atck1Name}</h2>
+          ) : (
+            pokemon.atck1Name
+          )}
+          <span>{pokemon.atck1Strength}</span>
         </div>
         <div className="attack attack-2">
           <div className="nrj-block">
@@ -45,13 +47,9 @@ const StyledComponents = (pokemon) => {
             <i className="nrj nrj-normal"></i>
           </div>
           <h2>
-            Flammèche{" "}
-            <p>
-              Défaussez 1 carte énergie <i className="nrj nrj-feu"></i> attachée
-              à Salamèche pour pouvoir utiliser cette attaque.
-            </p>
+            {pokemon.atck2Name} {pokemon.atck2Descr}
           </h2>
-          <span>30</span>
+          <span>{pokemon.atck2Strength}</span>
         </div>
       </div>
       <div className="stats-block">
@@ -76,8 +74,7 @@ const StyledComponents = (pokemon) => {
         </h3>
       </div>
       <p className="infos-block">
-        Il préfère les endroits chauds. En cas de pluie, de la vapeur se forme
-        autour de sa queue. NIV.10 No.4
+        {pokemon.descrText}. NIV.{pokemon.descrNiv} No.{pokemon.descrNo}
       </p>
     </Container>
   );
