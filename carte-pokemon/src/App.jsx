@@ -245,7 +245,7 @@ const pokemonCardsPlante = [
     "Poudre Toxik",
     <p> Le Pokémon Défenseur est maintenant Empoisonné</p>,
     20,
-    "Sos bulbe dorsal devient si gros qu'il ne peut plus se tenir sur ses membres postérieurs",
+    "Son bulbe dorsal devient si gros qu'il ne peut plus se tenir sur ses membres postérieurs",
     20,
     2
   ),
