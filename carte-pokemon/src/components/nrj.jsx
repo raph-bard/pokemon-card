@@ -1,10 +1,9 @@
 
 
-
-const Nrj = (nrj-type) => {
+const Nrj = ({nrjType}) => {
 
     return (
-
+        <i className={`nrj nrj-${nrjType}`}></i>
     )
 }
 

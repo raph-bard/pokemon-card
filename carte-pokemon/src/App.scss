@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-$gold-color: #9d8938;
-$yellow: #e9cc48;
-$blue-color: #1a2597;
-$red-color: #d3201a;
 
+
+
+/* rooting */
 * {
   margin: 0;
   padding: 0;
@@ -11,13 +10,12 @@ $red-color: #d3201a;
   font-family: "Open Sans", sans-serif;
 }
 
-body {
-  min-height: 100vh;
-  background-color: #202124;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* colors */
+$gold-color: #9d8938;
+$yellow-color: #e9cc48;
+$blue-color: #1a2597;
+$red-color: #d3201a;
+$dark-color: #202124;
 
 .blue-color {
   color: $blue-color;
@@ -25,6 +23,17 @@ body {
 .red-color {
   color: $red-color;
 }
+
+/* general */
+body {
+  height: 100vh;
+  background-color: $dark-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* aligns */
 .t-left {
   text-align: left;
 }
@@ -33,6 +42,7 @@ body {
   gap: 40px;
 }
 
+/* nrjs */
 .nrj {
   display: block;
   float: right;
@@ -53,10 +63,16 @@ body {
   &.nrj-plante {
     background: url("assets/nrj-plante.png");
   }
+
+  .pokemon-card & {
+      margin-top: 4px;
+      margin-left: 4px;
+  }
 }
 
+/* pokemon card */
 .pokemon-card {
-  border: 17px solid $yellow;
+  border: 17px solid $yellow-color;
   position: relative;
   padding: 5px 15px 44px;
 
@@ -108,11 +124,6 @@ body {
       margin-top: 8px;
     }
 
-    .nrj {
-      margin-top: 4px;
-      margin-left: 4px;
-    }
-
     span {
       float: right;
       color: $red-color;
@@ -137,8 +148,8 @@ body {
       background: linear-gradient(
         90deg,
         $gold-color 0%,
-        rgba(228, 224, 184, 1) 47%,
-        rgba(157, 137, 56, 1) 100%
+        #e4e0b8 47%,
+        #9d8938 100%
       );
       text-align: center;
       font-style: italic;
@@ -192,6 +203,8 @@ body {
       }
     }
     .attack-1 {
+      height: 64px;
+
       .talent {
         font-size: 9px;
         line-height: 12px;
@@ -205,6 +218,9 @@ body {
           display: inline-block;
         }
       }
+    }
+    .attack-2 {
+      height: 68px;
     }
 
     .nrj-block {
@@ -237,6 +253,10 @@ body {
         margin: 0 auto;
         float: none;
       }
+
+      div i {
+        display: inline-block;
+      }
     }
   }
 
@@ -256,17 +276,18 @@ body {
   }
 }
 
+/* buttons */
 .switch-starter {
   margin: 30px auto 0;
-  background-color: #202124;
-  border: 2px solid $yellow;
+  background-color: $dark;
+  border: 2px solid $yellow-color;
   padding: 10px;
   color: white;
   border-radius: 10px;
   cursor: pointer;
 
   &:hover {
-    background-color: $yellow;
+    background-color: $yellow-color;
   }
   &:hover,
   & {

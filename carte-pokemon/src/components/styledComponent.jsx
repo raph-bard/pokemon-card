@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Nrj from "./nrj";
 
 const Container = styled.div`
   width: 358px;
@@ -6,7 +7,34 @@ const Container = styled.div`
   border-radius: 14px;
 `;
 
+
+
 const StyledComponents = (pokemon) => {
+
+  const setResistance = () => {
+
+    if (pokemon.evoId === 0) {
+      return (
+        <Nrj nrjType="normal"/>
+      ) 
+    } else if (pokemon.evoId === 1) {
+      return (
+        <div>
+          <Nrj nrjType="normal"/>
+          <Nrj nrjType="normal"/>
+        </div>
+      )
+    } else {
+      return (
+        <div>
+          <Nrj nrjType="normal"/>
+          <Nrj nrjType="normal"/>
+          <Nrj nrjType="normal"/>
+        </div>
+      )
+    }
+  }
+  
   return (
     <Container className={`pokemon-card type-${pokemon.type}`}>
       <h1 className={`${pokemon.id}`}>
@@ -16,7 +44,7 @@ const StyledComponents = (pokemon) => {
             : `Evolution de ${pokemon.evo}`}
         </b>
         {pokemon.name}
-        <i className={`nrj nrj-${pokemon.type}`}></i>
+        <Nrj nrjType={pokemon.type}></Nrj>
         <span>{pokemon.pv} PV</span>
       </h1>
       <figure>
@@ -32,7 +60,7 @@ const StyledComponents = (pokemon) => {
       <div className="attack-block">
         <div className="attack attack-1 attack-only">
           <div className="nrj-block">
-            {pokemon.talent == true ? "" : <i className="nrj nrj-normal"></i>}
+            {pokemon.talent == true ? "" : <Nrj nrjType={"normal"}/>}
           </div>
           {pokemon.talent !== true ? (
             <h2>{pokemon.atck1Name}</h2>
@@ -43,8 +71,8 @@ const StyledComponents = (pokemon) => {
         </div>
         <div className="attack attack-2">
           <div className="nrj-block">
-            <i className="nrj nrj-feu"></i>
-            <i className="nrj nrj-normal"></i>
+            <Nrj nrjType={pokemon.type}></Nrj>
+            <Nrj nrjType="normal"></Nrj>
           </div>
           <h2>
             {pokemon.atck2Name} {pokemon.atck2Descr}
@@ -70,7 +98,8 @@ const StyledComponents = (pokemon) => {
 
         <h3>Résistance</h3>
         <h3>
-          Coût de retraite<i className="nrj nrj-normal"></i>
+          Coût de retraite
+            {setResistance()}
         </h3>
       </div>
       <p className="infos-block">
