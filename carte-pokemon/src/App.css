@@ -1,5 +1,5 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* rooting */
 * {
   margin: 0;
   padding: 0;
@@ -7,14 +7,35 @@
   font-family: "Open Sans", sans-serif;
 }
 
+/* general */
 body {
-  min-height: 100vh;
+  height: 100vh;
   background-color: #202124;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* colors */
+.blue-color {
+  color: #1a2597;
+}
+
+.red-color {
+  color: #d3201a;
+}
+
+/* aligns */
+.t-left {
+  text-align: left;
+}
+
+.d-flex {
+  display: flex;
+  gap: 40px;
+}
+
+/* nrjs */
 .nrj {
   display: block;
   float: right;
@@ -32,20 +53,30 @@ body {
 .nrj.nrj-eau {
   background: url("assets/nrj-eau.jpg");
 }
-.nrj.nrj-feuille {
-  background: url("assets/nrj-feuille.png");
+.nrj.nrj-plante {
+  background: url("assets/nrj-plante.png");
 }
 
+/* pokemon card */
 .pokemon-card {
-  background: rgb(192, 97, 91);
-  background: linear-gradient(90deg, rgb(192, 97, 91) 0%, rgb(210, 216, 241) 11%, rgb(192, 97, 91) 23%, rgb(210, 216, 241) 39%, rgb(192, 97, 91) 56%, rgb(210, 216, 241) 80%, rgb(192, 97, 91) 100%);
+  border: 17px solid #e9cc48;
+  position: relative;
+  padding: 5px 15px 44px;
+}
+.pokemon-card.type-feu {
+  background: linear-gradient(90deg, #c0615b 0%, #d2d8f1 11%, #c0615b 23%, #d2d8f1 39%, #c0615b 56%, #d2d8f1 80%, #c0615b 100%);
+}
+.pokemon-card.type-eau {
+  background: linear-gradient(90deg, #19a3c8 0%, #d2d8f1 11%, #19a3c8 23%, #d2d8f1 39%, #19a3c8 56%, #d2d8f1 80%, #19a3c8 100%);
+}
+.pokemon-card.type-plante {
+  background: linear-gradient(90deg, #70b37b 0%, #d2d8f1 11%, #70b37b 23%, #d2d8f1 39%, #70b37b 56%, #d2d8f1 80%, #70b37b 100%);
 }
 .pokemon-card h1 {
   font-size: 21px;
   font-weight: 700;
 }
-.pokemon-card h1.base-pokemon:before {
-  content: "Pokémon de base";
+.pokemon-card h1 b {
   font-size: 10px;
   display: block;
   line-height: 0px;
@@ -57,18 +88,23 @@ body {
 }
 .pokemon-card h1 span {
   float: right;
-  color: #B2444B;
+  color: #d3201a;
 }
-.pokemon-card figure img {
+.pokemon-card figure .pokemon-image {
   width: 100%;
   border: solid 6px #9d8938;
+  height: 210px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: 6px;
 }
 .pokemon-card figure figcaption {
   font-size: 12px;
   width: calc(100% - 20px);
   margin: 0 auto;
-  background: rgb(157, 137, 56);
-  background: linear-gradient(90deg, #9d8938 0%, rgb(228, 224, 184) 47%, rgb(157, 137, 56) 100%);
+  background: #9d8938;
+  background: linear-gradient(90deg, #9d8938 0%, #e4e0b8 47%, #9d8938 100%);
   text-align: center;
   font-style: italic;
   font-weight: bold;
@@ -92,14 +128,15 @@ body {
 }
 .pokemon-card .attack-block .attack h2 p {
   display: inline;
-  font-size: 11px;
+  font-size: 9px;
+  line-height: 9px;
 }
 .pokemon-card .attack-block .attack h2 p .nrj {
   display: inline-block;
   float: none;
   width: 15px;
   height: 15px;
-  vertical-align: bottom;
+  vertical-align: text-bottom;
 }
 .pokemon-card .attack-block .attack span {
   font-size: 26px;
@@ -107,6 +144,25 @@ body {
 }
 .pokemon-card .attack-block .attack-only h2 {
   text-align: center;
+}
+.pokemon-card .attack-block .attack-1 {
+  height: 64px;
+}
+.pokemon-card .attack-block .attack-1 .talent {
+  font-size: 9px;
+  line-height: 12px;
+}
+.pokemon-card .attack-block .attack-1 .talent b {
+  font-size: 11px;
+}
+.pokemon-card .attack-block .attack-1 .talent .nrj {
+  width: 12px;
+  height: 12px;
+  float: none;
+  display: inline-block;
+}
+.pokemon-card .attack-block .attack-2 {
+  height: 68px;
 }
 .pokemon-card .attack-block .nrj-block {
   float: left;
@@ -135,6 +191,9 @@ body {
   margin: 0 auto;
   float: none;
 }
+.pokemon-card .stats-block h3 div i {
+  display: inline-block;
+}
 .pokemon-card .infos-block {
   font-size: 10px;
   font-weight: 700;
@@ -144,4 +203,23 @@ body {
   width: calc(100% - 12px);
   margin: 5px auto 0;
   font-style: italic;
+  position: absolute;
+  bottom: 5px;
+  left: 6px;
+}
+
+.switch-starter {
+  margin: 30px auto 0;
+  background-color: #202124;
+  border: 2px solid #e9cc48;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.switch-starter:hover {
+  background-color: #e9cc48;
+}
+.switch-starter:hover, .switch-starter {
+  transition: all 0.3s;
 }/*# sourceMappingURL=App.css.map */
