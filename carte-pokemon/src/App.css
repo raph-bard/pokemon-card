@@ -7,15 +7,6 @@
   font-family: "Open Sans", sans-serif;
 }
 
-/* general */
-body {
-  height: 100vh;
-  background-color: #202124;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* colors */
 .blue-color {
   color: #1a2597;
@@ -25,7 +16,16 @@ body {
   color: #d3201a;
 }
 
-/* aligns */
+/* general */
+body {
+  height: 100vh;
+  background-color: #202124;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* aligns/displays */
 .t-left {
   text-align: left;
 }
@@ -33,6 +33,10 @@ body {
 .d-flex {
   display: flex;
   gap: 40px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* nrjs */
@@ -55,6 +59,10 @@ body {
 }
 .nrj.nrj-plante {
   background: url("assets/nrj-plante.png");
+}
+.pokemon-card .nrj {
+  margin-top: 4px;
+  margin-left: 4px;
 }
 
 /* pokemon card */
@@ -81,10 +89,6 @@ body {
   display: block;
   line-height: 0px;
   margin-top: 8px;
-}
-.pokemon-card h1 .nrj {
-  margin-top: 4px;
-  margin-left: 4px;
 }
 .pokemon-card h1 span {
   float: right;
@@ -208,6 +212,7 @@ body {
   left: 6px;
 }
 
+/* buttons */
 .switch-starter {
   margin: 30px auto 0;
   background-color: #202124;
@@ -222,4 +227,61 @@ body {
 }
 .switch-starter:hover, .switch-starter {
   transition: all 0.3s;
+}
+
+@keyframes pokeball-hover {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: 5deg;
+  }
+  50% {
+    rotate: -5deg;
+  }
+  75% {
+    rotate: 5deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+.pokeball-container {
+  position: relative;
+}
+.pokeball-container .overlay {
+  position: absolute;
+  display: block;
+  width: 88px;
+  height: 100px;
+  background-image: url("assets/salameche.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  top: -150px;
+  left: calc(50% - 44px);
+}
+.pokeball-container .pokeball {
+  display: block;
+  background: url("assets/pokeball.png") no-repeat center center;
+  background-size: cover;
+  width: 282px;
+  height: 282px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.pokeball-container .pokeball, .pokeball-container .pokeball:hover {
+  transition: all 0.3s;
+}
+.pokeball-container .pokeball.big-pokeball:hover {
+  animation: pokeball-hover 0.5s ease-in;
+}
+.pokeball-container .pokeball.tiny-pokeball {
+  transform: scale(0.75) translateY(250px);
+}
+
+/* carousel */
+.carousel-container {
+  height: 50vh;
+  width: 50vw;
 }/*# sourceMappingURL=App.css.map */
