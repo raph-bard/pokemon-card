@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import StyledComponent from "./components/styledComponent";
+import PokemonCard from "./components/pokemonCard";
 
 const pokemonProperties = [
   "id",
@@ -71,7 +71,7 @@ const pokemonCardsFeu = [
     30,
     "Il préfère les endroits chauds. En cas de pluie, de la vapeur se forme  autour de sa queue",
     10,
-    4,
+    4
   ),
   new StarterFeu(
     "reptincel",
@@ -96,7 +96,7 @@ const pokemonCardsFeu = [
     50,
     "En agitant sa queue, il peut élever le niveau de la température à un degré incroyable",
     32,
-    5,
+    5
   ),
   new StarterFeu(
     "dracaufeu",
@@ -128,7 +128,7 @@ const pokemonCardsFeu = [
     100,
     "Il peut fendre la roche de son souffle brûlant. Il est souvent la cause de nombreux incendies",
     76,
-    6,
+    6
   ),
 ];
 const pokemonCardsEau = [
@@ -156,7 +156,7 @@ const pokemonCardsEau = [
     null,
     "Son dos durcit avec l'âge et devient une super carapace. Il peut cracher des jets d'écumes",
     8,
-    1,
+    1
   ),
   new StarterEau(
     "carabaffe",
@@ -273,7 +273,8 @@ const pokemonCardsPlante = [
       <p className="talent">
         <b className="red-color">Pouvoir Pokémon : Transfert d'énergie</b> Vous
         pouvez prendre 1 carte énergie <i className="nrj nrj-plante"></i> à 1 de
-        vos pokemon et l'attacher à un autre. Ce pouvoir ne peut être utilisé si Tortank est Endormi, Confus ou Paralysé.
+        vos pokemon et l'attacher à un autre. Ce pouvoir ne peut être utilisé si
+        Tortank est Endormi, Confus ou Paralysé.
       </p>
     ),
     null,
@@ -287,6 +288,7 @@ const pokemonCardsPlante = [
 ];
 
 function App() {
+  
   const [pokemonCard, setPokemonCard] = useState(pokemonCardsPlante);
 
   const switchStarter = () => {
@@ -303,7 +305,7 @@ function App() {
     <div>
       <div className="d-flex">
         {pokemonCard.map((pokemon) => (
-          <StyledComponent key={pokemon.id} {...pokemon} />
+          <PokemonCard key={pokemon.id} {...pokemon} />
         ))}
       </div>
       <div className="d-flex">
